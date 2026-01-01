@@ -13,8 +13,8 @@ import FullGallery from './components/FullGallery';
 // --- BRAND DETAILS ---
 const BRAND_NAME = "Zalak's Mehandi";
 const ARTIST_NAME = "Zalak Sevak";
-const PHONE_NUMBER = "+91 93166 459810";
-const WHATSAPP_LINK = `https://wa.me/9193166459810`;
+const PHONE_NUMBER = "+91 93166 45981";
+const WHATSAPP_LINK = `https://wa.me/919316645981`;
 const INSTAGRAM_LINK = "https://www.instagram.com/mehndi.by_zalak/?utm_source=qr&igsh=MXdpcm91ejgwZW1pdw%3D%3D#";
 const LOCATION = "Nadiad, Gujarat";
 
