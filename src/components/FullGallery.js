@@ -7,22 +7,30 @@ import FluidGalleryNavbar from './FluidGalleryNavbar';
 // --- 1. RAW DATA ---
 const rawGalleryData = [
   // --- BRIDE FOLDER ---
+    { category: "Wrist Length", img: "/images/palm/palm1.jpg", title: "Simple Touch", desc: "Just fingers and mandala." },
+
   { category: "Bride", img: "/images/bride/bride1.jpg", title: "Royal Dulhan", desc: "Signature bridal portrait." },
   { category: "Minimal", img: "/images/minimal/minimal6.jpg", title: "Simple Touch", desc: "Just fingers and mandala." },
   { category: "Full Hand", img: "/images/fullhand/fullhand11.jpg", title: "Heavy Marwari", desc: "Dense design with rich stain." },
   { category: "Legs", img: "/images/legs/legs7.jpg", title: "Royal Anklet", desc: "Heavy Payal style." },
   { category: "Full Hand", img: "/images/fullhand/fullhand3.jpg", title: "Heavy Marwari", desc: "Dense design with rich stain." },
+  { category: "Wrist Length", img: "/images/palm/palm3.jpg", title: "Simple Touch", desc: "Just fingers and mandala." },
   { category: "Bride", img: "/images/bride/bride2.jpg", title: "Wedding Vows", desc: "Detailed storytelling design." },
   { category: "Minimal", img: "/images/minimal/minimal2.jpg", title: "Simple Touch", desc: "Just fingers and mandala." },
   { category: "Arabic", img: "/images/arabic/arabic3.jpg", title: "Gulf Style", desc: "Unique layout with spaces." },
   { category: "Bride", img: "/images/bride/bride3.jpg", title: "Wedding Vows", desc: "Detailed storytelling design." },
   { category: "Minimal", img: "/images/minimal/minimal7.jpg", title: "Simple Touch", desc: "Just fingers and mandala." },
+      { category: "Wrist Length", img: "/images/palm/palm4.jpg", title: "Simple Touch", desc: "Just fingers and mandala." },
+
   { category: "Full Hand", img: "/images/fullhand/fullhand4.jpg", title: "Heavy Marwari", desc: "Dense design with rich stain." },
   { category: "Bride", img: "/images/bride/bride8.jpg", title: "Wedding Vows", desc: "Detailed storytelling design." },
   { category: "Minimal", img: "/images/minimal/minimal11.jpg", title: "Simple Touch", desc: "Just fingers and mandala." },
+  { category: "Wrist Length", img: "/images/palm/palm2.jpg", title: "Simple Touch", desc: "Just fingers and mandala." },
 
   // --- FULL HAND FOLDER ---
-  { category: "Full Hand", img: "/images/fullhand/fullhand1.jpg", title: "Elbow Magic", desc: "Symmetrical traditional patterns." },
+  
+      { category: "Wrist Length", img: "/images/palm/palm5.jpg", title: "Simple Touch", desc: "Just fingers and mandala." },
+{ category: "Full Hand", img: "/images/fullhand/fullhand1.jpg", title: "Elbow Magic", desc: "Symmetrical traditional patterns." },
   { category: "Minimal", img: "/images/minimal/minimal3.jpg", title: "Simple Touch", desc: "Just fingers and mandala." },
   { category: "Full Hand", img: "/images/fullhand/fullhand5.jpg", title: "Heavy Marwari", desc: "Dense design with rich stain." },
   { category: "Legs", img: "/images/legs/legs8.jpg", title: "Royal Anklet", desc: "Heavy Payal style." },
@@ -30,14 +38,19 @@ const rawGalleryData = [
   { category: "Full Hand", img: "/images/fullhand/fullhand2.jpg", title: "Heavy Marwari", desc: "Dense design with rich stain." },
   { category: "Bride", img: "/images/bride/bride4.jpg", title: "Wedding Vows", desc: "Detailed storytelling design." },
   { category: "Bride", img: "/images/bride/bride9.jpg", title: "Wedding Vows", desc: "Detailed storytelling design." },
+    { category: "Wrist Length", img: "/images/palm/palm5.jpg", title: "Simple Touch", desc: "Just fingers and mandala." },
 
   // --- ARABIC FOLDER ---
+      { category: "Wrist Length", img: "/images/palm/palm6.jpg", title: "Simple Touch", desc: "Just fingers and mandala." },
+
   { category: "Arabic", img: "/images/arabic/arabic1.jpg", title: "Modern Bel", desc: "Free-flowing floral vines." },
   { category: "Minimal", img: "/images/minimal/minimal9.jpg", title: "Simple Touch", desc: "Just fingers and mandala." },
   { category: "Full Hand", img: "/images/fullhand/fullhand6.jpg", title: "Heavy Marwari", desc: "Dense design with rich stain." },
   { category: "Arabic", img: "/images/arabic/arabic2.jpg", title: "Gulf Style", desc: "Unique layout with spaces." },
 
   // --- LEGS FOLDER ---
+      { category: "Wrist Length", img: "/images/palm/palm7.jpg", title: "Simple Touch", desc: "Just fingers and mandala." },
+
   { category: "Legs", img: "/images/legs/legs1.jpg", title: "Bridal Feet", desc: "Matching lotus motifs." },
   { category: "Full Hand", img: "/images/fullhand/fullhand7.jpg", title: "Heavy Marwari", desc: "Dense design with rich stain." },
   { category: "Arabic", img: "/images/arabic/arabic4.jpg", title: "Gulf Style", desc: "Unique layout with spaces." },
@@ -49,6 +62,7 @@ const rawGalleryData = [
   { category: "Legs", img: "/images/legs/legs4.jpg", title: "Royal Anklet", desc: "Heavy Payal style." },
   { category: "Minimal", img: "/images/minimal/minimal5.jpg", title: "Simple Touch", desc: "Just fingers and mandala." },
   { category: "Full Hand", img: "/images/fullhand/fullhand9.jpg", title: "Heavy Marwari", desc: "Dense design with rich stain." },
+    { category: "Wrist Length", img: "/images/palm/palm8.jpg", title: "Simple Touch", desc: "Just fingers and mandala." },
 
   { category: "Legs", img: "/images/legs/legs5.jpg", title: "Royal Anklet", desc: "Heavy Payal style." },
   { category: "Arabic", img: "/images/arabic/arabic5.jpg", title: "Gulf Style", desc: "Unique layout with spaces." },
@@ -58,6 +72,8 @@ const rawGalleryData = [
   { category: "Bride", img: "/images/bride/bride10.jpg", title: "Wedding Vows", desc: "Detailed storytelling design." },
   
   // --- FIGURES FOLDER ---
+      { category: "Wrist Length", img: "/images/palm/palm9.jpg", title: "Simple Touch", desc: "Just fingers and mandala." },
+
   { category: "Figures", img: "/images/figures/figure1.jpg", title: "Radha Krishna", desc: "Divine love story." },
   { category: "Bride", img: "/images/bride/bride6.jpg", title: "Wedding Vows", desc: "Detailed storytelling design." },
   { category: "Figures", img: "/images/figures/figure2.jpg", title: "Groom Portrait", desc: "Realistic sketching." },
@@ -65,6 +81,8 @@ const rawGalleryData = [
   { category: "Figures", img: "/images/figures/figure3.jpg", title: "Radha Krishna", desc: "Divine love story." },
 
   // --- MINIMAL FOLDER ---
+      { category: "Wrist Length", img: "/images/palm/palm10.jpg", title: "Simple Touch", desc: "Just fingers and mandala." },
+
   { category: "Minimal", img: "/images/minimal/minimal1.jpg", title: "Simple Touch", desc: "Just fingers and mandala." },
   { category: "Bride", img: "/images/bride/bride7.jpg", title: "Wedding Vows", desc: "Detailed storytelling design." },
 ];
@@ -75,7 +93,7 @@ const galleryData = rawGalleryData.map((item, index) => ({
   id: index + 1
 }));
 
-const categories = ["All", "Bride", "Full Hand", "Arabic", "Legs", "Figures", "Minimal"];
+const categories = ["All", "Bride", "Full Hand", "Arabic", "Legs", "Figures", "Minimal","Wrist Length"];
 
 const FullGallery = ({ onBack }) => {
   const [activeCategory, setActiveCategory] = useState("All");

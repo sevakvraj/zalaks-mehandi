@@ -33,9 +33,14 @@ const portfolioData = [
   { id: 4, category: "Vastu", img: "/images/vastu1.jpg", title: "Traditional Vastu Art" },
   { id: 5, category: "Baby Shower", img: "/images/babyshower1.jpg", title: "Baby Shower Special" },
   { id: 6, category: "Simple", img: "/images/simple1.jpg", title: "Elegant Minimalist" },
+  
+  // --- NEW WRIST LENGTH ADDITIONS ---
+  { id: 7, category: "Wrist Length", img: "/images/Palm/palm1.jpg", title: "Intricate Palm Work" },
+  { id: 8, category: "Wrist Length", img: "/images/Palm/palm2.jpg", title: "Heavy Wrist Design" },
 ];
 
-const categories = ["All", "Bridal", "Engagement", "Vastu", "Baby Shower", "Simple"];
+// --- ADDED "Wrist Length" HERE ---
+const categories = ["All", "Bridal", "Engagement", "Vastu", "Baby Shower", "Simple", "Wrist Length"];
 
 // --- COMPONENT: GOLD DUST PARTICLES ---
 const HeroParticles = () => {
