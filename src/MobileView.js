@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { IconButton, Chip } from '@mui/material';
-import { WhatsApp, Phone, Instagram, Menu as MenuIcon, Close } from '@mui/icons-material';
+import { WhatsApp, Phone, Menu as MenuIcon, Close } from '@mui/icons-material';
 
 // --- MOBILE ASSETS & DATA ---
 const categories = ["All", "Bridal", "Arabic", "Engagement", "Simple"];
