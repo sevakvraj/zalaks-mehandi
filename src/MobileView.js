@@ -1,132 +1,179 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { IconButton, Chip } from '@mui/material';
-import { WhatsApp, Phone, Menu as MenuIcon, Close } from '@mui/icons-material';
+import { Button } from '@mui/material';
+import { WhatsApp, Phone, Menu as AutoAwesome } from '@mui/icons-material';
 
-// --- MOBILE ASSETS & DATA ---
-const categories = ["All", "Bridal", "Arabic", "Engagement", "Simple"];
+// --- IMPORTS ---
+import Footer from './components/Footer';
+import MobileFullGallery from './components/MobileFullGallery'; 
+import MobileNavbar from './components/MobileNavbar';
+import MobileLiveArtistry from './components/MobileLiveArtistry'; // <--- NEW IMPORT
+import MobileTestimonials from './components/MobileTestimonials'; // <--- NEW IMPORT
+import MobileAbout from './components/MobileAbout'; // <--- NEW IMPORT
+import MobilePackages from './components/MobilePackages';
+import MobileFAQ from './components/MobileFAQ';
 
-// Using your existing images structure
+
+// --- BRAND DATA ---
+const BRAND_NAME = "Zalak's Mehandi";
+const PHONE_NUMBER = "+91 93166 459810";
+const WHATSAPP_LINK = `https://wa.me/9193166459810`;
+const INSTAGRAM_LINK = "https://www.instagram.com/mehndi.by_zalak/?utm_source=qr&igsh=MXdpcm91ejgwZW1pdw%3D%3D#";
+const LOCATION = "Nadiad, Gujarat";
+
+const categories = ["All", "Bridal", "Engagement", "Vastu", "Baby Shower", "Simple", "Wrist Length"];
+
 const mobileImages = [
-  { id: 1, src: "/images/bridal1.jpg", category: "Bridal", title: "Royal Bridal" },
-  { id: 2, src: "/images/bridal2.jpg", category: "Bridal", title: "Full Hands" },
-  { id: 3, src: "/images/engagement1.jpg", category: "Engagement", title: "Ring Ceremony" },
-  { id: 4, src: "/images/vastu1.jpg", category: "Bridal", title: "Vastu Art" },
-  { id: 5, src: "/images/babyshower1.jpg", category: "Engagement", title: "Baby Shower" },
-  { id: 6, src: "/images/simple1.jpg", category: "Simple", title: "Elegant Minimal" },
+  { id: 1, category: "Bridal", src: "/images/bridal1.jpg", title: "Royal Bridal" },
+  { id: 2, category: "Bridal", src: "/images/bridal2.jpg", title: "Full Leg Design" },
+  { id: 7, category: "Wrist Length", src: "/images/Palm/palm1.jpg", title: "Intricate Palm" },
+  { id: 3, category: "Engagement", src: "/images/engagement1.jpg", title: "Ring Ceremony" },
+  { id: 8, category: "Wrist Length", src: "/images/Palm/palm2.jpg", title: "Heavy Wrist" },
+  { id: 4, category: "Vastu", src: "/images/vastu1.jpg", title: "Vastu Art" },
+  { id: 5, category: "Baby Shower", src: "/images/babyshower1.jpg", title: "Baby Shower" },
+  { id: 6, category: "Simple", src: "/images/simple1.jpg", title: "Minimalist" },
+  { id: 9, category: "Legs", src: "/images/legs/legs1.jpg", title: "Cultural Motifs" },
 ];
 
 const MobileView = () => {
   const [filter, setFilter] = useState("All");
-  const [menuOpen, setMenuOpen] = useState(false);
+  const [showGallery, setShowGallery] = useState(false);
 
-  // Filter Logic
   const filteredImages = filter === "All" 
     ? mobileImages 
     : mobileImages.filter(img => img.category === filter);
 
-  return (
-    <div className="min-h-screen bg-[#2b1d1d] text-[#e5d3b3] font-['Poppins'] pb-24">
-      
-      {/* 1. TOP APP BAR (Sticky) */}
-      <div className="sticky top-0 z-50 bg-[#2b1d1d]/95 backdrop-blur-sm border-b border-[#e5d3b3]/10 px-4 py-3 flex justify-between items-center shadow-lg">
-        <h1 className="font-['Great_Vibes'] text-2xl text-[#d4af37]">Zalak's Mehandi</h1>
-        <IconButton onClick={() => setMenuOpen(true)}>
-          <MenuIcon sx={{ color: '#e5d3b3' }} />
-        </IconButton>
-      </div>
+  const leftColumn = filteredImages.filter((_, i) => i % 2 === 0);
+  const rightColumn = filteredImages.filter((_, i) => i % 2 !== 0);
 
-      {/* 2. FULL SCREEN MENU OVERLAY */}
+  const handleOpenGallery = () => {
+    setShowGallery(true);
+  };
+
+  return (
+    <div className="min-h-screen bg-[#FFFBF0] text-[#4A2c2A] font-sans">
+      
+      {/* FULL GALLERY OVERLAY */}
       <AnimatePresence>
-        {menuOpen && (
-          <motion.div 
-            initial={{ x: '100%' }} animate={{ x: 0 }} exit={{ x: '100%' }}
-            className="fixed inset-0 z-[60] bg-[#1a1111] flex flex-col items-center justify-center space-y-8"
-          >
-            <IconButton onClick={() => setMenuOpen(false)} sx={{ position: 'absolute', top: 20, right: 20 }}>
-              <Close sx={{ color: '#e5d3b3', fontSize: 30 }} />
-            </IconButton>
-            <a href="#home" onClick={() => setMenuOpen(false)} className="text-2xl font-light tracking-widest">HOME</a>
-            <a href="#portfolio" onClick={() => setMenuOpen(false)} className="text-2xl font-light tracking-widest">PORTFOLIO</a>
-            <a href="#contact" onClick={() => setMenuOpen(false)} className="text-2xl font-light tracking-widest">CONTACT</a>
-          </motion.div>
+        {showGallery && (
+            <div className="fixed inset-0 z-[10000] bg-[#FFFBF0] overflow-hidden">
+                <MobileFullGallery onBack={() => setShowGallery(false)} />
+            </div>
         )}
       </AnimatePresence>
 
-      {/* 3. HERO SECTION (Instagram Story Style) */}
-      <div className="relative h-[60vh] w-full overflow-hidden" id="home">
-        <img src="/images/bridal1.jpg" alt="Hero" className="w-full h-full object-cover opacity-60" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#2b1d1d] via-transparent to-transparent" />
-        <div className="absolute bottom-10 left-6">
-          <motion.p 
-            initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
-            className="text-[#d4af37] tracking-[0.2em] text-sm uppercase mb-2"
-          >
-            Professional Artist
-          </motion.p>
-          <motion.h2 
-            initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}
-            className="font-['Great_Vibes'] text-5xl text-white"
-          >
-            Artistry & Soul
-          </motion.h2>
-        </div>
-      </div>
+      {/* MOBILE NAVBAR */}
+      <MobileNavbar 
+        brandName={BRAND_NAME} 
+        instagramLink={INSTAGRAM_LINK}
+        whatsappLink={WHATSAPP_LINK}
+        onOpenGallery={handleOpenGallery}
+      />
 
-      {/* 4. SCROLLABLE FILTERS (Like Instagram) */}
-      <div className="sticky top-[60px] z-40 bg-[#2b1d1d] py-4 pl-4 overflow-x-auto whitespace-nowrap scrollbar-hide border-b border-[#e5d3b3]/5">
-        <div className="flex space-x-3 pr-4">
-          {categories.map((cat) => (
-            <Chip 
-              key={cat} label={cat} onClick={() => setFilter(cat)}
-              sx={{
-                backgroundColor: filter === cat ? '#d4af37' : 'rgba(229, 211, 179, 0.1)',
-                color: filter === cat ? '#2b1d1d' : '#e5d3b3',
-                fontFamily: 'Poppins', border: '1px solid #d4af37',
-                '&:hover': { backgroundColor: '#c5a028' }
-              }}
-            />
-          ))}
-        </div>
-      </div>
-
-      {/* 5. PINTEREST GRID GALLERY (2 Columns) */}
-      <div className="p-3 grid grid-cols-2 gap-3" id="portfolio">
-        <AnimatePresence>
-          {filteredImages.map((img) => (
-            <motion.div
-              key={img.id}
-              layout
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.9 }}
-              className="relative rounded-xl overflow-hidden shadow-lg h-64 bg-black/20"
-            >
-              <img src={img.src} alt={img.title} className="w-full h-full object-cover" />
-              <div className="absolute bottom-0 inset-x-0 p-2 bg-gradient-to-t from-black/80 to-transparent">
-                <p className="text-xs text-white font-light">{img.title}</p>
-              </div>
-            </motion.div>
-          ))}
-        </AnimatePresence>
-      </div>
-
-      {/* 6. STICKY BOTTOM ACTION BAR */}
-      <div className="fixed bottom-6 left-4 right-4 z-50 bg-[#1a1111]/90 backdrop-blur-md border border-[#d4af37]/30 rounded-2xl p-2 flex justify-between shadow-2xl" id="contact">
-        <a 
-          href="https://wa.me/919316645981" 
-          className="flex-1 bg-[#25D366] text-white rounded-xl py-3 flex justify-center items-center font-bold mr-2 text-sm shadow-lg no-underline"
+      {/* HERO SECTION */}
+      <div className="relative w-full h-[75vh] overflow-hidden" id="home">
+        <motion.div 
+            initial={{ scale: 1.1 }} 
+            animate={{ scale: 1 }} 
+            transition={{ duration: 1.5, ease: "easeOut" }}
+            className="absolute inset-0 w-full h-full"
         >
+            <img src="/images/bridal1.jpg" alt="Hero" className="w-full h-full object-cover" />
+        </motion.div>
+        <div className="absolute inset-0 bg-gradient-to-t from-[#FFFBF0] via-[#FFFBF0]/60 to-transparent flex flex-col justify-end pb-12 px-6">
+            <motion.div 
+                initial={{ opacity: 0, y: 30 }} 
+                animate={{ opacity: 1, y: 0 }} 
+                transition={{ delay: 0.5, duration: 0.8 }}
+                className="text-center relative z-10"
+            >
+                <div className="inline-block px-4 py-1 border border-[#4A2c2A]/30 rounded-full bg-white/30 backdrop-blur-md mb-4 shadow-sm">
+                    <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#4A2c2A]">{LOCATION}</span>
+                </div>
+                <h1 className="font-['Great_Vibes'] text-6xl text-[#4A2c2A] drop-shadow-sm mb-2">Artistry & Soul</h1>
+                <p className="text-sm font-light text-[#4A2c2A]/80 max-w-xs mx-auto leading-relaxed">Intricate, high-definition Mehndi designs for Brides, Baby Showers, and Festivals.</p>
+            </motion.div>
+        </div>
+      </div>
+
+      {/* --- NEW LIVE ARTISTRY SECTION (Added Here) --- */}
+      <MobileLiveArtistry />
+
+      {/* CATEGORY BUBBLES */}
+      <div className="px-4 py-8 relative z-20">
+        <div className="text-center mb-6">
+            <h3 className="font-['Great_Vibes'] text-4xl text-[#4A2c2A]">Latest Creations</h3>
+        </div>
+        <div className="flex flex-wrap justify-center gap-2">
+          {categories.map((cat) => (
+            <button 
+                key={cat} 
+                onClick={() => setFilter(cat)} 
+                className={`px-5 py-2 rounded-full text-[11px] font-bold uppercase tracking-wider transition-all border ${
+                    filter === cat 
+                    ? 'bg-[#4A2c2A] text-white border-[#4A2c2A] shadow-md scale-105' 
+                    : 'bg-white text-[#4A2c2A] border-[#4A2c2A]/20'
+                }`}
+            >
+              {cat}
+            </button>
+          ))}
+        </div>
+      </div>
+
+      {/* MASONRY GRID */}
+      <div className="px-4 pb-10" id="portfolio">
+        <div className="flex gap-3 items-start">
+            <div className="flex flex-col gap-3 w-1/2">
+                <AnimatePresence>
+                    {leftColumn.map((img) => (
+                        <motion.div key={img.id} layout initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="relative rounded-xl overflow-hidden shadow-sm">
+                            <img src={img.src} alt={img.title} className="w-full h-auto object-cover" />
+                        </motion.div>
+                    ))}
+                </AnimatePresence>
+            </div>
+            <div className="flex flex-col gap-3 w-1/2 pt-6"> 
+                <AnimatePresence>
+                    {rightColumn.map((img) => (
+                        <motion.div key={img.id} layout initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="relative rounded-xl overflow-hidden shadow-sm">
+                            <img src={img.src} alt={img.title} className="w-full h-auto object-cover" />
+                        </motion.div>
+                    ))}
+                </AnimatePresence>
+            </div>
+        </div>
+
+        <div className="mt-16 mb-12 text-center">
+             <Button onClick={handleOpenGallery} variant="contained" endIcon={<AutoAwesome />} sx={{ backgroundColor: '#4A2c2A', borderRadius: '50px', padding: '14px 40px', fontSize: '0.9rem', letterSpacing: '0.1em', boxShadow: '0 15px 30px -5px rgba(74, 44, 42, 0.4)', zIndex: 10 }}>
+                View Full Gallery
+            </Button>
+        </div>
+      </div>
+
+      <MobilePackages whatsapp={WHATSAPP_LINK} />
+
+      <MobileAbout />
+      
+      <MobileFAQ />
+
+      <MobileTestimonials />
+
+      {/* CATEGORY BUBBLES */}
+      <div className="px-4 py-8 relative z-20"></div>
+
+      {/* FOOTER */}
+      <Footer brandName={BRAND_NAME} phone={PHONE_NUMBER} whatsapp={WHATSAPP_LINK} instagram={INSTAGRAM_LINK} location={LOCATION} />
+
+      {/* STICKY BOTTOM BAR */}
+      <div className="fixed bottom-6 left-4 right-4 z-50 bg-[#2b1d1d]/95 backdrop-blur-md border border-[#D69E2E]/20 rounded-full p-2 flex justify-between shadow-2xl" id="contact">
+        <a href={WHATSAPP_LINK} className="flex-1 bg-[#25D366] text-white rounded-full py-3 flex justify-center items-center font-bold mr-2 text-sm shadow-lg no-underline">
           <WhatsApp className="mr-2 text-lg" /> Chat
         </a>
-        <a 
-          href="tel:+919316645981" 
-          className="flex-1 bg-[#d4af37] text-[#2b1d1d] rounded-xl py-3 flex justify-center items-center font-bold text-sm shadow-lg no-underline"
-        >
+        <a href={`tel:${PHONE_NUMBER}`} className="flex-1 bg-[#D69E2E] text-[#2b1d1d] rounded-full py-3 flex justify-center items-center font-bold text-sm shadow-lg no-underline">
           <Phone className="mr-2 text-lg" /> Call Now
         </a>
       </div>
-
     </div>
   );
 };

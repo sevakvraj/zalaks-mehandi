@@ -93,7 +93,7 @@ const galleryData = rawGalleryData.map((item, index) => ({
   id: index + 1
 }));
 
-const categories = ["All", "Bride", "Full Hand", "Arabic", "Legs", "Figures", "Minimal","Wrist Length"];
+const categories = ["All", "Bride", "Full Hand","Wrist Length","Figures", "Legs",  "Minimal","Arabic",];
 
 const FullGallery = ({ onBack }) => {
   const [activeCategory, setActiveCategory] = useState("All");

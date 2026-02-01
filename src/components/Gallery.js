@@ -4,48 +4,15 @@ import { motion, AnimatePresence } from 'framer-motion';
 // --- EXPANDED IMAGE DATA ---
 // You can add as many images as you want here!
 const allProjects = [
-  { 
-    id: 1, 
-    category: "Bridal", 
-    img: "/images/bridal1.jpg", 
-    title: "Royal Bridal Hands", 
-    desc: "Intricate dulhan figures with lotus motifs covering full arms." 
-  },
-  { 
-    id: 2, 
-    category: "Bridal", 
-    img: "/images/bridal2.jpg", 
-    title: "Full Leg Design", 
-    desc: "Symmetrical heavy design matching the bridal lehenga embroidery." 
-  },
-  { 
-    id: 3, 
-    category: "Engagement", 
-    img: "/images/engagement1.jpg", 
-    title: "Ring Ceremony", 
-    desc: "Modern mandala style with space for the engagement ring." 
-  },
-  { 
-    id: 4, 
-    category: "Vastu", 
-    img: "/images/vastu1.jpg", 
-    title: "Traditional Vastu", 
-    desc: "Auspicious symbols (Kalash, Swastik) for good fortune." 
-  },
-  { 
-    id: 5, 
-    category: "Baby Shower", 
-    img: "/images/babyshower1.jpg", 
-    title: "Baby Shower Special", 
-    desc: "Gentle floral patterns celebrating the new journey of motherhood." 
-  },
-  { 
-    id: 6, 
-    category: "Simple", 
-    img: "/images/simple1.jpg", 
-    title: "Elegant Minimalist", 
-    desc: "Simple Arabic vines perfect for guests and bridesmaids." 
-  },
+  { src: "/images/bridal1.jpg", title: "Royal Bridal Detail", subtitle: "Precision in Every Line" },
+  { src: "/images/minimal/minimal3.jpg", title: "Figure Inspired Art", subtitle: "Cultural Elegance" },
+  { src: "/images/bridal2.jpg", title: "Traditional Elegance", subtitle: "Timeless Indian Art" },
+{src: "/images/palm/palm3.jpg", title: "Cultural Motifs", subtitle: "Heritage Designs" },
+  { src: "/images/engagement1.jpg", title: "Engagement Special", subtitle: "Celebrate Love" },
+  { src: "/images/fullhand/fullhand10.jpg", title: "Full Hand Artistry", subtitle: "Intricate Masterpiece" },
+    { src: "/images/bride/bride6.jpg", title: "Bridal Designs", subtitle: "Harmonious Patterns" },
+    { src: "/images/figures/figure4.jpg", title: "Figure Inspired", subtitle: "Auspicious Designs" },
+    { src: "/images/fullhand/fullhand11.jpg", title: "FullHand Mehndi", subtitle: "Positive Energy" },
   // Add more photos here easily...
 ];
 
