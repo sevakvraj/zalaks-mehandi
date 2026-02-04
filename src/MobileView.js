@@ -16,7 +16,7 @@ import MobileFAQ from './components/MobileFAQ';
 
 // --- BRAND DATA ---
 const BRAND_NAME = "Zalak's Mehandi";
-const PHONE_NUMBER = "+91 93166 459810";
+const PHONE_NUMBER = "+91 93166 45981";
 const WHATSAPP_LINK = `https://wa.me/9193166459810`;
 const INSTAGRAM_LINK = "https://www.instagram.com/mehndi.by_zalak/?utm_source=qr&igsh=MXdpcm91ejgwZW1pdw%3D%3D#";
 const LOCATION = "Nadiad, Gujarat";
